@@ -101,19 +101,19 @@ Write-Host "  Zipped ~$totalItems items ($([math]::Round($totalSize/1MB,1)) MB -
 
 # ─── Compile with embedded resource ───
 Write-Host ""
-Write-Host "Compiling create-usb.exe with embedded source..." -ForegroundColor Yellow
+Write-Host "Compiling OpenCode-USB-Creator.exe with embedded source..." -ForegroundColor Yellow
 
 $csc = "C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe"
-$csFile = Join-Path $OutputDir "create-usb.cs"
+$csFile = Join-Path $OutputDir "OpenCode-USB-Creator.cs"
 $icoFile = Join-Path $OutputDir "opencode-usb-creator.ico"
-$outFile = Join-Path $OutputDir "create-usb.exe"
+$outFile = Join-Path $OutputDir "OpenCode-USB-Creator.exe"
 
 $launcherDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $launcherCs = Join-Path $launcherDir "launcher.cs"
 $launcherExe = Join-Path $launcherDir "launcher.exe"
 
-# Splash artwork, embedded so a standalone create-usb.exe still shows it
-$splashFile = Join-Path $OutputDir "7bf66f2c-a3a5-4b4b-8c78-0f019bf0d339.png"
+# Splash artwork, embedded so a standalone OpenCode-USB-Creator.exe still shows it
+$splashFile = Join-Path $OutputDir "splash.png"
 if (-not (Test-Path $splashFile)) {
     Write-Error "Splash image not found: $splashFile"
     exit 1

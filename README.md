@@ -81,7 +81,7 @@ The [`src/`](src/) folder contains the full source:
 - `OpenCode-USB-Creator.cs` — the installer (C#/WinForms)
 - `launcher.cs` — the tiny self-locating launcher that becomes `OpenCode AI.exe`
 - `build-embedded.ps1` — zips the payload and compiles the installer
-- `create-usb.ps1` — a standalone PowerShell version of the installer logic
+- `check-updates.ps1` — the update-check script the installer writes onto the stick
 - icons and splash image
 
 Building also needs the **payload** — the actual OpenCode, Node.js and WezTerm binaries
